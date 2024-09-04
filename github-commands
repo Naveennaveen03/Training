@@ -1,0 +1,31 @@
+git config--global user.name
+git init
+git clone <repo-url>
+git add <file>
+git add .
+git commit -m "message"
+git status
+git diff
+git log
+git branch
+git branch <branch-name>
+git checkout <branch-name>
+git merge <branch-name>
+git rebase <branch-name>
+git pull
+git push
+git push origin <branch-name>
+git fetch
+git remote -v
+git remote add origin <repo-url>
+git remote remove origin
+git reset --hard HEAD
+git reset <file>
+git revert <commit>
+git stash
+git stash pop
+git tag
+git tag <tag-name>
+git tag -d <tag-name>
+git show <commit>
+git blame <file>
