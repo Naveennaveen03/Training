@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.box-width {
+    width: 100%;
+}
+
+.firstname {
+    width: 45%;
+    margin-right: 1rem;
+}
+
+.lastname {
+    width: 45%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 70%;
+    background-color: #f8f8f8 !important;
+    width: max-content;
+    padding: 20px;
+
+}
+
+.billing-details {
+    background-color: white !important;
+}
+
+.billing-details,
+.summary {
+    background-color: #f8f8f8;
+    width: max-content;
+    padding: 20px;
+    box-shadow: 5px 5px rgb(243, 239, 239);
+}
+
+.billing-details input,
+.billing-details textarea {
+    /* width: 100%; */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+
+    ;
+}
+
+.check-box {
+    background-color: #3700b3;
+}
+
+.summary {
+    background-color: white !important;
+    height: 50%;
+    width: 30%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.summary h3,
+.summary p {
+    margin: 0 0 15px 0;
+}
+
+.btn-purchase {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-purchase:hover {
+    background-color: #3700b3;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+}
+
+.input-item {
+    width: 95%;
+}
+
+.summary {
+    width: 20rem;
+}
+
+.gap {
+    gap: 1rem;
+}
+
+.price-right {
+    text-align: center;
+}
+
+.para-price {
+    width: 50%;
+}
+
+.flex {
+    justify-content: space-between;
+}
+
+.flex2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Form</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="billing-details">
+            <h2>Billing Details</h2>
+            <hr>
+            <form>
+
+                <div class="flex gap">
+                    <input type="text" class="firstname" id="first-name" name="first-name" placeholder="First Name">
+                    <input type="text" class="lastname" id="last-name" name="last-name" placeholder="Last Name">
+                </div>
+
+
+                <div class="input-container">
+                    <input class="input-item" type="text" id="company-name" name="company-name"
+                        placeholder="Company Name">
+
+                    <input class="input-item" type="text" id="address" name="address" required placeholder="Address">
+
+                    <input class="input-item" type="email" id="email" name="email" required placeholder="Email">
+
+                    <input class="input-item" type="tel" id="phone" name="phone" required placeholder="Phone">
+
+                    <textarea class="input-item" id="additional-info" name="additional-info"
+                        placeholder="Additional information"></textarea>
+                </div>
+
+
+                <center>
+                    <p><input type="checkbox" class="checkbox" checked> Create an account?</p>
+                </center>
+
+
+            </form>
+        </div>
+
+        <div class="summary">
+            <h2>Summary</h2>
+            <hr>
+            <div class="flex">
+                <p>Products</p>
+                <p>$53.98</p>
+
+            </div>
+
+            <div class="flex">
+                <p>Shipping </p>
+                <p>Gratis</p>
+            </div>
+            <hr>
+            <div class="flex">
+                <p><b> Total Amount <br> (including VAT):</b> </p>
+                <p><strong>$53.98</strong></p>
+            </div>
+
+            <button class="btn-purchase">Make Purchase</button>
+
+
+        </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
