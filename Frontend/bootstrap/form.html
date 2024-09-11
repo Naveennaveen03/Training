@@ -12,47 +12,46 @@
 
 <body style="background-color: whitesmoke;">
 
-    <div class="vh-100 container my-4 d-flex justify-content-center align-items-center" >
-        <div class="row g-3 border " style="background-color: white;">
-            
+    <div class="vh-100 container my-4 d-flex justify-content-center align-items-center">
+        <div class="row g-3 border" style="background-color: white;">
             <div class="col-md-7">
-                <div class=" bg-body-tertiary  p-3 rounded " style="box-shadow: 5px 7px 5px whitesmoke;">
+                <div class="bg-body-tertiary p-3 rounded" style="box-shadow: 5px 7px 5px whitesmoke;">
                     <h2>Billing Details</h2>
                     <hr>
-                    <form id="myform">
+                    <form id="myform" onsubmit="return validateForm()">
                         <div class="row g-2 mb-3">
                             <div class="col">
                                 <input type="text" class="form-control" id="first-name" name="first-name" placeholder="First Name">
+                                <div id="first-name-error" class="text-danger"></div>
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Last Name">
+                                <div id="last-name-error" class="text-danger"></div>
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <input class="form-control mb-3" type="text" id="company-name" name="company-name" placeholder="Company Name">
                             <input class="form-control mb-3" type="text" id="address" name="address" required placeholder="Address">
-                            <input class="form-control mb-3" type="email" id="email" name="email" required placeholder="Email">
+                            <input class="form-control mb-3" type="text" id="email" name="email" required placeholder="Email">
                             <input class="form-control mb-3" type="tel" id="phone" name="phone" required placeholder="Phone">
+                            <div id="phone-error" class="text-danger"></div>
                             <textarea class="form-control" id="additional-info" name="additional-info" placeholder="Additional information"></textarea>
                         </div>
 
-                        <div class=" d-flex justify-content-center align-items-center  mb-3 ">
+                        <div class="d-flex justify-content-center align-items-center mb-3">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="create-account" checked>
                                 <label class="form-check-label mb-3 margin-left" for="create-account">Create an account?</label>
-                                <button class="btn btn-primary w-100">submit</button>
-                                
+                                <button type="submit" class="btn btn-primary w-100">Submit</button>
                             </div>
-                           
                         </div>
                     </form>
                 </div>
             </div>
 
-            
             <div class="col-md-5">
-                <div class="bg-body-tertiary p-3 rounded " style="box-shadow: 5px 7px 5px whitesmoke;">
+                <div class="bg-body-tertiary p-3 rounded" style="box-shadow: 5px 7px 5px whitesmoke;">
                     <h2>Summary</h2>
                     <hr>
                     <div class="d-flex justify-content-between mb-2">
@@ -76,7 +75,50 @@
         </div>
     </div>
 
-    
+    <script>
+        function validateForm() {
+           
+            document.getElementById('first-name-error').innerText = '';
+            document.getElementById('last-name-error').innerText = '';
+            document.getElementById('phone-error').innerText = '';
+
+            let valid = true;
+
+            
+            const firstName = document.getElementById('first-name').value.trim();
+            if (firstName.length < 2 || !isAllAlphabet(firstName)) {
+                document.getElementById('first-name-error').innerText = 'First Name must not be empty, contain only alphabets';
+                valid = false;
+            }
+
+            
+            const lastName = document.getElementById('last-name').value.trim();
+            if (lastName.length < 1 || !isAllAlphabet(lastName)) {
+                document.getElementById('last-name-error').innerText = 'Last Name must not be empty, contain only alphabets.';
+                valid = false;
+            }
+
+            
+            const phone = document.getElementById('phone').value.trim();
+            if (phone.length !== 10 || isNaN(phone)) {
+                document.getElementById('phone-error').innerText = 'Phone number must be exactly 10 digits.';
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        
+        function isAllAlphabet(str) {
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i];
+                if (!((char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z'))) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
 </body>
 
 </html>
