@@ -2,17 +2,23 @@ const express = require('express');
 const pool = require('./db');
 
 const app = express();
-app.use(express.json());
+app.use(express.json()); // In-Built Middleware
 
 // List all users
 app.get('/users', async (req, res) => {
     try {
-        const [results] = await pool.query('SELECT * FROM User');
+        const resultArray = await pool.query('SELECT * FROM User');
+        const results = resultArray[0]
+        
+
         res.json(results);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
+
+
+
 
 // Add a user
 app.post('/users', async (req, res) => {
@@ -21,11 +27,15 @@ app.post('/users', async (req, res) => {
     
     try {
         await pool.query(sql, [id, username, email, password, phone, status]);
+        
         res.status(201).json({ id, username, email, phone, status });
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
 });
+
+
+
 
 // Update a user
 app.put('/users/:id', async (req, res) => {
